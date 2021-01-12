@@ -39,7 +39,3 @@ LOCAL_POST_INSTALL_CMD :=\
 	ln -sf egl/libGLES_mali.so $(TARGET_OUT)/lib/libGLES_mali.so
 include $(BUILD_PREBUILT)
 endif
-
-
-
-
