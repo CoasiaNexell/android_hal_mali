@@ -34,5 +34,8 @@ LOCAL_SRC_FILES := lib32/egl/libGLES_mali.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_PATH := $(TARGET_OUT)/lib/egl
+# Make a symlink frome /system/lib/egl/libGLES_mali.so to /system/lib/
+LOCAL_POST_INSTALL_CMD :=\
+	ln -sf egl/libGLES_mali.so $(TARGET_OUT)/lib/libGLES_mali.so
 include $(BUILD_PREBUILT)
 endif
