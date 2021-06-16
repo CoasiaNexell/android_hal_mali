@@ -22,4 +22,8 @@ LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_RELATIVE_PATH := egl
 LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+
+# Make a symlink from /system/lib/egl/libGLES_mali.so to /system/lib/
+LOCAL_POST_INSTALL_CMD := \
+    ln -sf /vendor/lib/egl/libGLES_mali.so $(TARGET_OUT_VENDOR)/lib/libGLES_mali.so
 include $(BUILD_PREBUILT)
