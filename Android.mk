@@ -14,6 +14,20 @@
 # limitations under the License.
 
 LOCAL_PATH := $(call my-dir)
+
+ifeq ($(TARGET_ARCH),arm64)
+include $(CLEAR_VARS)
+LOCAL_MODULE := libGLES_mali
+LOCAL_MODULE_OWNER := arm
+LOCAL_SRC_FILES_64 := libGLES_mali64.so
+LOCAL_SRC_FILES_32 := libGLES_mali.so
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := egl
+LOCAL_VENDOR_MODULE := true
+LOCAL_MULTILIB := both
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+include $(BUILD_PREBUILT)
+else
 include $(CLEAR_VARS)
 LOCAL_MODULE := libGLES_mali
 LOCAL_MODULE_OWNER := arm
@@ -22,8 +36,5 @@ LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_RELATIVE_PATH := egl
 LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-
-# Make a symlink from /system/lib/egl/libGLES_mali.so to /system/lib/
-LOCAL_POST_INSTALL_CMD := \
-    ln -sf /vendor/lib/egl/libGLES_mali.so $(TARGET_OUT_VENDOR)/lib/libGLES_mali.so
 include $(BUILD_PREBUILT)
+endif
