@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "96aa03db_c665f1d8",
+        "filename": "Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2022-09-13T05:00:20Z",
+      "side": 0,
+      "message": "system/lib에도 libGLES_mali가 있어야 했어요 특정 앱이랑 어플때문에. 이건 살려야 할듯.",
+      "revId": "cc257c519a8bfc34fcf5350dbee9badb93dc3b3e",
+      "serverId": "f3c90331-7953-4206-aadc-b7348badd027",
+      "unresolved": true
+    }
+  ]
+}
